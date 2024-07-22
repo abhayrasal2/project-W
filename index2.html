@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo yum update -y
+sudo yum install httpd -y
+sudo yum install wget unzip -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+sudo wget https://www.free-css.com/assets/files/free-css-templates/download/page291/atlas.zip
+sudo unzip atlas.zip
+sudo cp -rvf /Atlas/*  /var/www/html/
+sudo systemctl restart httpd
+
